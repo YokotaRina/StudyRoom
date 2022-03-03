@@ -54,6 +54,8 @@
   <ItemGroup>
      <Compile Include="Assets\Script\DestroyMaterial.cs" />
      <Compile Include="Assets\Script\Controller.cs" />
+     <Compile Include="Assets\Script\State\State.cs" />
+     <Compile Include="Assets\Script\State\StateInfo.cs" />
  <Reference Include="UnityEngine">
  <HintPath>/Applications/Unity/Hub/Editor/2020.3.30f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
