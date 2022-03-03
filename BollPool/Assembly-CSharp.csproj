@@ -653,9 +653,6 @@
  </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\BallObject\Ball.physicMaterial" />
-    <Content Include="Assets\BallObject\Material.mat" />
-    <Content Include="Assets\BallObject\Pop.prefab" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
