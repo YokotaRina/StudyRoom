@@ -3,7 +3,7 @@ namespace Script.State
     /// <summary>
     /// Stateの管理クラス
     /// </summary>
-    public class State
+    public class StateManager
     {
         /// <summary>
         /// 使用していない状態を示す値
@@ -19,7 +19,7 @@ namespace Script.State
         /// <summary>
         /// 子ステート
         /// </summary>
-        private State _childState;
+        private StateManager _childState;
 
         /// <summary>
         /// 現在のステート
@@ -112,9 +112,9 @@ namespace Script.State
         /// <summary>
         /// 子ステート取得
         /// </summary>
-        public State GetChild()
+        public StateManager GetChild()
         {
-            return _childState != null ? _childState : _childState = new State();
+            return _childState != null ? _childState : _childState = new StateManager();
         }
 
         /// <summary>

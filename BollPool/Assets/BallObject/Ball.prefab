@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4009545386956447362}
   - component: {fileID: 4009545386956447421}
   m_Layer: 0
-  m_Name: Pop
+  m_Name: Ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
