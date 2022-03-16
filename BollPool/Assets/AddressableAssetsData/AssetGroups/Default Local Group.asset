@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: ea9ee487a58a04990b6eff0b0420d0f3
+  m_SerializeEntries:
+  - m_GUID: 59b05514c850941c992397f637776a08
+    m_Address: Ball
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 957841a33fff046b3baeadcd9b518e4a
+    m_Address: Material
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ec94f219a621d4f38b700823ce75e90a
+    m_Address: BallPhysic
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: e391aff0f95c748608c94373ef7d2514, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: ade82d68dd1f544a884fec8b8ec07860, type: 2}
+    - {fileID: 11400000, guid: 0fd52e7e2bf05469f9a101bddb45f21e, type: 2}

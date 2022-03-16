@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using Script.State;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
@@ -11,7 +13,8 @@ namespace Script.Ball
     /// </summary>
     public class Controller : MonoBehaviour
     {
-        [SerializeField] private DestroyMaterial _ball;
+        // ※AssetReferenceを使えばインスペクタでアセットの設定ができるので、アドレスの指定をしなくてもよくなる
+        [SerializeField] private AssetReference _ballReference;
         [Header("Button")]
         [SerializeField] private Button _popButton;
         [SerializeField] private Button _autoPopButton;
@@ -23,6 +26,8 @@ namespace Script.Ball
 
         private int maxCount = 100;
         private float time = 0;
+
+        private DestroyMaterial _ball;
 
         /// <summary>
         /// ステートの種類
@@ -62,6 +67,22 @@ namespace Script.Ball
             _autoPopButton.onClick.AddListener(() => _state.SetState((int)State.AutoPop));
             _stopAutoPopButton.onClick.AddListener(() => _state.SetState((int)State.StopAutoPop));
             _deleteButton.onClick.AddListener(() => _state.SetState((int)State.Delete));
+
+            // AddressableAssetsSystemを利用してプレハブをロードする
+            LoadBall();
+        }
+
+        /// <summary>
+        /// ボールのロード
+        /// </summary>
+        private async void LoadBall()
+        {
+            var handle = _ballReference.LoadAssetAsync<GameObject>();
+            await handle.Task;
+            if (handle.Status == AsyncOperationStatus.Succeeded)
+            {
+                _ball = handle.Result.GetComponent<DestroyMaterial>();
+            }
         }
 
         /// <summary>
@@ -69,6 +90,9 @@ namespace Script.Ball
         /// </summary>
         private void Update()
         {
+            // ロードが終わるまで何もしない
+            if (_ball == null) return;
+
             switch ((State)_state.GetState())
             {
                 case State.SelectWait:
@@ -125,11 +149,6 @@ namespace Script.Ball
                     
             }
             _state.Update(Time.unscaledDeltaTime);
-            return;
-
-
-
-           
         }
 
         /// <summary>
@@ -151,6 +170,15 @@ namespace Script.Ball
             rend.material.color = _colorList[color];
 
             _destroyMaterialList.Add(obj);
+        }
+
+        /// <summary>
+        /// OnDestroy
+        /// </summary>
+        private void OnDestroy()
+        {
+            // 使い終わったらインスタンスをリリースする
+            _ballReference.ReleaseInstance(_ball.gameObject);
         }
     }
 }
