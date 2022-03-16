@@ -52,10 +52,10 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Script\DestroyMaterial.cs" />
-     <Compile Include="Assets\Script\Controller.cs" />
-     <Compile Include="Assets\Script\State\State.cs" />
+     <Compile Include="Assets\Script\Ball\DestroyMaterial.cs" />
+     <Compile Include="Assets\Script\State\StateManager.cs" />
      <Compile Include="Assets\Script\State\StateInfo.cs" />
+     <Compile Include="Assets\Script\Ball\Controller.cs" />
  <Reference Include="UnityEngine">
  <HintPath>/Applications/Unity/Hub/Editor/2020.3.30f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
@@ -626,6 +626,12 @@
  <Reference Include="Unity.VSCode.Editor">
  <HintPath>/Users/yokotarina/Work/StudyRoom/BollPool/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
+ <Reference Include="UnityEditor.CacheServer">
+ <HintPath>/Users/yokotarina/Work/StudyRoom/BollPool/Library/ScriptAssemblies/UnityEditor.CacheServer.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Addressables">
+ <HintPath>/Users/yokotarina/Work/StudyRoom/BollPool/Library/ScriptAssemblies/Unity.Addressables.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>/Users/yokotarina/Work/StudyRoom/BollPool/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
@@ -640,6 +646,18 @@
  </Reference>
  <Reference Include="Unity.TextMeshPro">
  <HintPath>/Users/yokotarina/Work/StudyRoom/BollPool/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.ScriptableBuildPipeline">
+ <HintPath>/Users/yokotarina/Work/StudyRoom/BollPool/Library/ScriptAssemblies/Unity.ScriptableBuildPipeline.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Addressables.Editor">
+ <HintPath>/Users/yokotarina/Work/StudyRoom/BollPool/Library/ScriptAssemblies/Unity.Addressables.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.ResourceManager">
+ <HintPath>/Users/yokotarina/Work/StudyRoom/BollPool/Library/ScriptAssemblies/Unity.ResourceManager.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.ScriptableBuildPipeline.Editor">
+ <HintPath>/Users/yokotarina/Work/StudyRoom/BollPool/Library/ScriptAssemblies/Unity.ScriptableBuildPipeline.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
  <HintPath>/Users/yokotarina/Work/StudyRoom/BollPool/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
