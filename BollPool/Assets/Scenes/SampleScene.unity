@@ -766,7 +766,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc45b3765e8c4ac0866c3fe350b26f58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ball: {fileID: 4009545386956447362, guid: 59b05514c850941c992397f637776a08, type: 3}
+  _ballReference:
+    m_AssetGUID: 59b05514c850941c992397f637776a08
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
   _popButton: {fileID: 899870766}
   _autoPopButton: {fileID: 23800382}
   _stopAutoPopButton: {fileID: 493225643}
