@@ -118,7 +118,7 @@ namespace Script.Ball
                     if (time > 1)
                     {
                         time = 0.0f;
-                        if (_destroyMaterialList.Count < 100) this.CreateBall();
+                        if (_destroyMaterialList.Count < maxCount) this.CreateBall();
                     }
                     break;
                 case State.StopAutoPop:
