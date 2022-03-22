@@ -16,19 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: ea9ee487a58a04990b6eff0b0420d0f3
-  m_SerializeEntries:
-  - m_GUID: 59b05514c850941c992397f637776a08
-    m_Address: Ball
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 957841a33fff046b3baeadcd9b518e4a
-    m_Address: Material
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: ec94f219a621d4f38b700823ce75e90a
-    m_Address: BallPhysic
-    m_ReadOnly: 0
-    m_SerializedLabels: []
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: e391aff0f95c748608c94373ef7d2514, type: 2}
   m_SchemaSet:

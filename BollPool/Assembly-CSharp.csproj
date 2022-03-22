@@ -58,6 +58,7 @@
      <Compile Include="Assets\Script\State\StateManager.cs" />
      <Compile Include="Assets\Script\State\StateInfo.cs" />
      <Compile Include="Assets\Script\Ball\Controller.cs" />
+     <None Include="Assets\Font\readme.txt" />
  <Reference Include="UnityEngine">
  <HintPath>/Applications/Unity/Hub/Editor/2020.3.30f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
@@ -651,6 +652,9 @@
  </Reference>
  <Reference Include="Unity.ScriptableBuildPipeline">
  <HintPath>/Users/yokotarina/Work/StudyRoom/BollPool/Library/ScriptAssemblies/Unity.ScriptableBuildPipeline.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.2D.Sprite.Editor">
+ <HintPath>/Users/yokotarina/Work/StudyRoom/BollPool/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Addressables.Editor">
  <HintPath>/Users/yokotarina/Work/StudyRoom/BollPool/Library/ScriptAssemblies/Unity.Addressables.Editor.dll</HintPath>
