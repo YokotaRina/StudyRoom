@@ -54,14 +54,17 @@
   <ItemGroup>
      <Compile Include="Assets\Script\SQLite\DataTable.cs" />
      <Compile Include="Assets\Script\Ball\DestroyMaterial.cs" />
+     <Compile Include="Assets\Script\PictureBook\MenuController.cs" />
      <Compile Include="Assets\Script\SQLite\SqliteDatabase.cs" />
      <Compile Include="Assets\Script\PictureBook\Type.cs" />
      <Compile Include="Assets\Script\State\StateManager.cs" />
+     <Compile Include="Assets\Script\PictureBook\PictureBookController.cs" />
      <Compile Include="Assets\Script\State\StateInfo.cs" />
      <Compile Include="Assets\Script\Ball\Controller.cs" />
-     <Compile Include="Assets\Script\PictureBook\MenuController.cs" />
      <Compile Include="Assets\Script\PictureBook\InsertController.cs" />
-     <Compile Include="Assets\Script\PictureBook\PictureBookController.cs" />
+     <Compile Include="Assets\Script\SQLite\SQLite.cs" />
+     <Compile Include="Assets\Script\SQLite\SQLiteUtility.cs" />
+     <Compile Include="Assets\Script\PictureBook\ListContentBehaviour.cs" />
      <None Include="Assets\Font\readme.txt" />
  <Reference Include="UnityEngine">
  <HintPath>/Applications/Unity/Hub/Editor/2020.3.30f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>

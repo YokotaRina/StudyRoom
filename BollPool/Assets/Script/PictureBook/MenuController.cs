@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,7 +21,20 @@ namespace Script.PictureBook
         /// </summary>
         private void Start()
         {
-            
+            _insertController.Initialize(this);
+            _pictureBookController.Initialize(this);
+
+            // 各種ボタン押下時の処理
+            _insertButton.onClick.AddListener(() =>
+            {
+                _insertController.gameObject.SetActive(true);
+                this.gameObject.SetActive(false);
+            });
+            _pictureBookButton.onClick.AddListener(() =>
+            {
+                _pictureBookController.gameObject.SetActive(true);
+                this.gameObject.SetActive(false);
+            });
         }
 
         /// <summary>
@@ -30,7 +42,8 @@ namespace Script.PictureBook
         /// </summary>
         private void OnDestroy()
         {
-            
+            Destroy(_insertController);
+            Destroy(_pictureBookController);
         }
     }
 }

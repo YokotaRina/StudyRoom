@@ -8,7 +8,7 @@ namespace Script.PictureBook
     /// </summary>
     public enum Type
     {
-        [Display(Name = "-----")]
+        [Display(Name = "_____")]
         None = 0,
 
         [Display(Name = "ノーマル")]
@@ -73,5 +73,33 @@ namespace Script.PictureBook
     public class DisplayAttribute : Attribute
     {
         public string Name { get; set; }
+    }
+
+    /// <summary>
+    /// Enum 拡張クラス
+    /// </summary>
+    public static class EnumExtend
+    {
+        /// <summary>
+        /// Display属性で指定された文字列を返す
+        /// </summary>
+        public static string ToDisplayName(this Enum enumInstance)
+        {
+            var descriptionAttributes = QueryAttribute<DisplayAttribute>(enumInstance);
+            if (descriptionAttributes != null && descriptionAttributes.Length > 0)
+            {
+                return descriptionAttributes[0].Name;
+            }
+
+            return enumInstance.ToString();
+        }
+
+        private static T[] QueryAttribute<T>(Enum enumInstance)
+        {
+            var type = enumInstance.GetType();
+            var fieldInfo = type.GetField(enumInstance.ToString());
+            var attributes = fieldInfo.GetCustomAttributes(typeof(T), false) as T[];
+            return attributes;
+        }
     }
 }
