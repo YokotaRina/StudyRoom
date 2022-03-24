@@ -99,7 +99,7 @@ namespace Script.PictureBook
         /// <summary>
         /// 全消し
         /// </summary>
-        private void Clean()
+        public void Clean()
         {
             _name.text = "";
             _number.text = "";

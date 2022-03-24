@@ -28,11 +28,13 @@ namespace Script.PictureBook
             _insertButton.onClick.AddListener(() =>
             {
                 _insertController.gameObject.SetActive(true);
+                _insertController.Clean();
                 this.gameObject.SetActive(false);
             });
             _pictureBookButton.onClick.AddListener(() =>
             {
                 _pictureBookController.gameObject.SetActive(true);
+                _pictureBookController.ListInitialize();
                 this.gameObject.SetActive(false);
             });
         }

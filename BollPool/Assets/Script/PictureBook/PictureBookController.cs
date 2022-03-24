@@ -38,6 +38,8 @@ namespace Script.PictureBook
         [SerializeField] private Button _detailReturnButton;
 
         private int choiceId = 0;
+        private const string NUMBER_TEXT_FORMAT = "№.{0:D3}";
+        private const string CLASS_TEXT_FORMAT = "{0}ポケモン";
 
         /// <summary>
         /// 初期化
@@ -56,6 +58,40 @@ namespace Script.PictureBook
             _showDataButton.onClick.AddListener(() =>
             {
                 _detailObject.SetActive(true);
+                SQLite sqlite = new SQLite("test.db");
+                string query = $"SELECT * FROM pokemon WHERE id = {choiceId}";
+                var result = sqlite.ExecuteQuery(query);
+
+
+                {
+                    foreach (var rowData in result.Rows)
+                    {
+                        var id = $"{(int)rowData["id"]:D3}";
+                        var path = $"SQLiteTest/Monster/{id}";
+                        if (System.IO.File.Exists("Assets/Resources/"+path+".png"))
+                        {
+                            Sprite image = Resources.Load<Sprite>(path);
+                            _image.sprite = image;
+                        }
+                        else
+                        {
+                            Sprite image = Resources.Load<Sprite>("SQLiteTest/Monster/000");
+                            _image.sprite = image;
+                        }
+
+                        _name.text = (string)rowData["name"];
+                        _number.text = string.Format(NUMBER_TEXT_FORMAT, id);
+                        _class.text = string.Format(CLASS_TEXT_FORMAT, (string)rowData["class"]);
+                        _type1.text = ((Type)Enum.ToObject(typeof(Type), (int)rowData["type1"])).ToDisplayName();
+                        var type2RowData = (int)rowData["type2"];
+                        if (type2RowData != 0) _type2.text = ((Type) Enum.ToObject(typeof(Type), type2RowData)).ToDisplayName();
+                        else _type2.text = "なし";
+                        _description.text = (string)rowData["detail"];
+                    }
+                }
+
+                
+                sqlite.Dispose();
             });
             _deleteButton.onClick.AddListener(() =>
             {
@@ -77,7 +113,7 @@ namespace Script.PictureBook
         /// <summary>
         /// リストの初期化
         /// </summary>
-        private void ListInitialize()
+        public void ListInitialize()
         {
             // 一回全削除
             foreach (Transform child in _contentList.transform)
@@ -89,13 +125,13 @@ namespace Script.PictureBook
             SQLite sqlite = new SQLite("test.db");
             string query = $"SELECT * FROM pokemon";
             var result = sqlite.ExecuteQuery(query);
-            foreach (var test in result.Rows)
+            foreach (var rowData in result.Rows)
             {
                 // プレハブを生成
                 var obj = Instantiate(_listContent);
-                obj.transform.parent = _contentList.transform;
+                obj.transform.SetParent(_contentList.transform);
                 obj.transform.localScale = Vector3.one;
-                obj.Initialize(_menuObject, (int)test["id"], (string)test["name"], (id) =>
+                obj.Initialize(_menuObject, (int)rowData["id"], (string)rowData["name"], (id) =>
                 {
                     choiceId = id;
                 });
