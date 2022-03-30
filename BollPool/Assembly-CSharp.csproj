@@ -55,16 +55,18 @@
      <Compile Include="Assets\Script\SQLite\DataTable.cs" />
      <Compile Include="Assets\Script\Ball\DestroyMaterial.cs" />
      <Compile Include="Assets\Script\PictureBook\MenuController.cs" />
+     <Compile Include="Assets\Scripts\Master\Master.cs" />
+     <Compile Include="Assets\Script\SQLite\SQLite.cs" />
      <Compile Include="Assets\Script\SQLite\SqliteDatabase.cs" />
      <Compile Include="Assets\Script\PictureBook\Type.cs" />
+     <Compile Include="Assets\Scripts\Master\CodeGenerator.cs" />
      <Compile Include="Assets\Script\State\StateManager.cs" />
      <Compile Include="Assets\Script\PictureBook\PictureBookController.cs" />
      <Compile Include="Assets\Script\State\StateInfo.cs" />
      <Compile Include="Assets\Script\Ball\Controller.cs" />
-     <Compile Include="Assets\Script\PictureBook\InsertController.cs" />
-     <Compile Include="Assets\Script\SQLite\SQLite.cs" />
      <Compile Include="Assets\Script\SQLite\SQLiteUtility.cs" />
      <Compile Include="Assets\Script\PictureBook\ListContentBehaviour.cs" />
+     <Compile Include="Assets\Script\PictureBook\InsertController.cs" />
      <None Include="Assets\Font\readme.txt" />
  <Reference Include="UnityEngine">
  <HintPath>/Applications/Unity/Hub/Editor/2020.3.30f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -287,6 +289,18 @@
  </Reference>
  <Reference Include="UnityEditor.UnityConnectModule">
  <HintPath>/Applications/Unity/Hub/Editor/2020.3.30f1/Unity.app/Contents/Managed/UnityEngine/UnityEditor.UnityConnectModule.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Buffers">
+ <HintPath>/Users/yokotarina/Work/StudyRoom/BollPool/Assets/Plugins/System.Buffers.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Threading.Tasks.Extensions">
+ <HintPath>/Users/yokotarina/Work/StudyRoom/BollPool/Assets/Plugins/System.Threading.Tasks.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Runtime.CompilerServices.Unsafe">
+ <HintPath>/Users/yokotarina/Work/StudyRoom/BollPool/Assets/Plugins/System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Memory">
+ <HintPath>/Users/yokotarina/Work/StudyRoom/BollPool/Assets/Plugins/System.Memory.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>/Applications/Unity/Hub/Editor/2020.3.30f1/Unity.app/Contents/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -639,14 +653,14 @@
  <Reference Include="UnityEditor.CacheServer">
  <HintPath>/Users/yokotarina/Work/StudyRoom/BollPool/Library/ScriptAssemblies/UnityEditor.CacheServer.dll</HintPath>
  </Reference>
- <Reference Include="Unity.Addressables">
- <HintPath>/Users/yokotarina/Work/StudyRoom/BollPool/Library/ScriptAssemblies/Unity.Addressables.dll</HintPath>
- </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>/Users/yokotarina/Work/StudyRoom/BollPool/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VisualStudio.Editor">
  <HintPath>/Users/yokotarina/Work/StudyRoom/BollPool/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Addressables">
+ <HintPath>/Users/yokotarina/Work/StudyRoom/BollPool/Library/ScriptAssemblies/Unity.Addressables.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>/Users/yokotarina/Work/StudyRoom/BollPool/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
@@ -675,17 +689,29 @@
  <Reference Include="UnityEditor.UI">
  <HintPath>/Users/yokotarina/Work/StudyRoom/BollPool/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
- <Reference Include="Unity.PlasticSCM.Editor">
- <HintPath>/Users/yokotarina/Work/StudyRoom/BollPool/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll</HintPath>
- </Reference>
  <Reference Include="Unity.Rider.Editor">
  <HintPath>/Users/yokotarina/Work/StudyRoom/BollPool/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>/Users/yokotarina/Work/StudyRoom/BollPool/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.PlasticSCM.Editor">
+ <HintPath>/Users/yokotarina/Work/StudyRoom/BollPool/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll</HintPath>
+ </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="MessagePack.csproj">
+      <Project>{2d86f8e1-12cd-6fd9-149e-e737d76e8864}</Project>
+      <Name>MessagePack</Name>
+    </ProjectReference>
+    <ProjectReference Include="MasterMemory.csproj">
+      <Project>{972576c7-aff1-125d-6dfe-d155dbc82b19}</Project>
+      <Name>MasterMemory</Name>
+    </ProjectReference>
+    <ProjectReference Include="MessagePack.Annotations.csproj">
+      <Project>{f557aa99-2b9a-b44c-b25a-679636dadf7c}</Project>
+      <Name>MessagePack.Annotations</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
